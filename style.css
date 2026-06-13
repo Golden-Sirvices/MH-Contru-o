@@ -77,26 +77,22 @@ nav {
   display: block; width: 25px; height: 2px; background: var(--white); transition: all 0.3s;
 }
 
-/* ─── HERO (FUSÃO DA IMAGEM + LOGO TRANSLÚCIDO) ──────────────── */
-/* ─── HERO (FOCADO NA EMPRESA E COM PLACA DA CASA ELEGANTE) ──────────────── */
+/* ─── HERO ──────────────── */
 #hero {
   min-height: 100vh;
   display: flex; align-items: center;
   position: relative;
   overflow: hidden;
   padding-top: 80px;
-  background: radial-gradient(circle at 80% 20%, #151512 0%, var(--black) 70%);
+  background: radial-gradient(circle at 50% 30%, #151512 0%, var(--black) 80%);
 }
 
-/* Fundo agora é limpo e profissional, sem a casa gigante incomodando */
 .hero-bg {
   position: absolute; inset: 0;
   background: var(--black);
-  opacity: 1;
   z-index: 1;
 }
 
-/* Grid sutil de engenharia/arquitetura que valoriza a empresa */
 .hero-grid {
   position: absolute; inset: 0; opacity: 0.04;
   background-image:
@@ -110,6 +106,27 @@ nav {
   position: relative; z-index: 3;
   width: 100%; max-width: 1200px; margin: 0 auto; padding: 2rem;
   display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center;
+}
+
+/* Estilo do MH acima da frase principal (Maior e Colorido) */
+.hero-logo-top {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 3.5rem; /* Aumentado de 2.2rem para 3.5rem */
+  letter-spacing: 0.02em;
+  color: var(--white); /* Cor branca do site */
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.hero-logo-top span {
+  color: var(--gold); /* Dourado oficial do site */
+  font-size: 1.4rem; /* Aumentado proporcionalmente */
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  margin-left: 0.5rem;
+  vertical-align: middle;
 }
 
 .hero-eyebrow {
@@ -209,12 +226,50 @@ nav {
   font-weight: 600;
 }
 
-/* NOVA ESTRUTURA VISUAL: A casa agora fica linda e controlada dentro deste painel */
 .hero-visual {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+/* ─── LOGOS GIGANTES DE FUNDO ─────────────────────── */
+/* 1. MH GIGANTE DA ESQUERDA (Atrás do texto) */
+.mega-logo-left {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(14rem, 28vw, 22rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(201, 162, 39, 0.015);
+  -webkit-text-stroke: 1px rgba(201, 162, 39, 0.05);
+  text-shadow: 0 0 100px rgba(201, 162, 39, 0.1);
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  top: 45%;
+  left: 15%;
+  transform: translateY(-50%);
+}
+
+/* 2. MH GIGANTE DA DIREITA (Atrás do card) */
+.hero-mega-logo {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(12rem, 24vw, 19rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(201, 162, 39, 0.025);
+  -webkit-text-stroke: 1px rgba(201, 162, 39, 0.08);
+  text-shadow: 0 0 90px rgba(201, 162, 39, 0.18);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hero-card {
@@ -230,12 +285,12 @@ nav {
   background-size: cover;
   background-position: center;
   transition: transform 0.4s ease;
+  z-index: 2;
 }
 .hero-card:hover {
   transform: translateY(-5px) scale(1.01);
 }
 
-/* Máscara elegante interna no card da casa */
 .hero-card::after {
   content: '';
   position: absolute; inset: 0;
@@ -259,7 +314,6 @@ nav {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Identidade da Empresa fixa na base do card da foto */
 .hero-card-body {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -268,9 +322,7 @@ nav {
   text-align: center;
 }
 
-.mh-logo-icon {
-  margin-bottom: 0.5rem;
-}
+.mh-logo-icon { margin-bottom: 0.5rem; }
 .mh-logo-icon svg { width: 36px; height: 36px; }
 
 .mh-logo-big {
@@ -301,20 +353,6 @@ nav {
   padding-top: 1rem;
 }
 .hero-card-tagline strong { color: var(--gold); }
-
-.hero-badge {
-  position: absolute;
-  top: 10px; right: 10px;
-  background: var(--gold);
-  color: var(--black);
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-}
 
 /* ─── SECTION SHARED ───────────────────────────────── */
 section {
@@ -413,8 +451,6 @@ section {
 }
 
 /* ─── DIFERENCIAIS ─────────────────────────────────── */
-#diferenciais { background: none; }
-
 .diff-wrapper {
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
 }
@@ -482,9 +518,7 @@ section {
 }
 
 /* ─── ATENDIMENTO ──────────────────────────────────── */
-#atendimento {
-  text-align: center;
-}
+#atendimento { text-align: center; }
 .atend-card {
   background: linear-gradient(135deg, #151200 0%, #1A1A1A 60%, #0D0D0D 100%);
   border: 1px solid rgba(201,162,39,0.25);
@@ -504,10 +538,6 @@ section {
 .atend-desc { color: var(--gray); font-size: 0.9rem; }
 
 /* ─── CONTATO ──────────────────────────────────────── */
-#contato {
-  position: relative;
-}
-
 .contact-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
 }
@@ -555,10 +585,7 @@ section {
   color: var(--white);
   margin-bottom: 0.5rem;
 }
-.contact-hint {
-  font-size: 0.78rem;
-  color: var(--gray);
-}
+.contact-hint { font-size: 0.78rem; color: var(--gray); }
 
 /* ─── FOOTER ───────────────────────────────────────── */
 footer {
@@ -630,6 +657,9 @@ footer {
   .hero-visual { order: -1; }
   .hero-stats { gap: 1.5rem; }
   .hero-title { font-size: 2.4rem; }
+  
+  /* Desativa os logos gigantes no mobile para não quebrar a leitura */
+  .mega-logo-left, .hero-mega-logo { display: none; }
 
   .diff-wrapper { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
