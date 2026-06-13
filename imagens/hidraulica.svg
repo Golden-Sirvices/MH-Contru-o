@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="#C9A227" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Registro / Torneira -->
+  <path d="M20 40h30v15H20z"/>
+  <path d="M35 22v18M25 27h20"/>
+  <!-- Cano de Saída e curva -->
+  <path d="M50 47h18c3 0 5 2 5 5v12"/>
+  <!-- Gota de água caindo -->
+  <path d="M73 74c0 3.3-2.7 6-6 6s-6-2.7-6-6c0-4.5 6-11 6-11s6 6.5 6 11z" fill="#C9A227"/>
+</svg>

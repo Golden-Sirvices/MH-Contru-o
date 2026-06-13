@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="#C9A227" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Losango Maior -->
+  <path d="M50 15L15 50l35 35 35-35Z"/>
+  <!-- Linhas de Junção Internas -->
+  <path d="M50 15v70M15 50h70"/>
+  <!-- Brilho/Reflexo interno do Porcelanato -->
+  <path d="M35 50l15 15 15-15-15-15Z" fill="#C9A227" fill-opacity="0.1"/>
+</svg>

@@ -77,38 +77,43 @@ nav {
   display: block; width: 25px; height: 2px; background: var(--white); transition: all 0.3s;
 }
 
-/* ─── HERO ─────────────────────────────────────────── */
+/* ─── HERO (FUSÃO DA IMAGEM + LOGO TRANSLÚCIDO) ──────────────── */
+/* ─── HERO (FOCADO NA EMPRESA E COM PLACA DA CASA ELEGANTE) ──────────────── */
 #hero {
   min-height: 100vh;
   display: flex; align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: 70px;
+  padding-top: 80px;
+  background: radial-gradient(circle at 80% 20%, #151512 0%, var(--black) 70%);
 }
 
+/* Fundo agora é limpo e profissional, sem a casa gigante incomodando */
 .hero-bg {
   position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 70% 60% at 70% 50%, rgba(201,162,39,0.08) 0%, transparent 70%),
-    linear-gradient(135deg, #000 0%, #0D0D0D 50%, #0A0800 100%);
+  background: var(--black);
+  opacity: 1;
+  z-index: 1;
 }
 
+/* Grid sutil de engenharia/arquitetura que valoriza a empresa */
 .hero-grid {
-  position: absolute; inset: 0; opacity: 0.03;
+  position: absolute; inset: 0; opacity: 0.04;
   background-image:
     linear-gradient(var(--gold) 1px, transparent 1px),
     linear-gradient(90deg, var(--gold) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-size: 50px 50px;
+  z-index: 2;
 }
 
 .hero-content {
-  position: relative; z-index: 2;
-  max-width: 1200px; margin: 0 auto; padding: 4rem 2rem;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  position: relative; z-index: 3;
+  width: 100%; max-width: 1200px; margin: 0 auto; padding: 2rem;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center;
 }
 
 .hero-eyebrow {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.25em;
   color: var(--gold);
@@ -123,9 +128,9 @@ nav {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--white);
   margin-bottom: 1.5rem;
@@ -134,49 +139,60 @@ nav {
 
 .hero-subtitle {
   font-size: 1.05rem;
-  color: rgba(245,245,240,0.65);
-  max-width: 480px;
+  color: rgba(245,245,240,0.75);
+  max-width: 500px;
   margin-bottom: 2.5rem;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .hero-buttons {
-  display: flex; gap: 1rem; flex-wrap: wrap;
+  display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem;
 }
 
 .btn-primary {
   background: var(--gold);
   color: var(--black);
-  padding: 0.9rem 2rem;
-  border-radius: 4px;
+  padding: 1rem 2.2rem;
+  border-radius: 6px;
   font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   display: inline-flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(201,162,39,0.2);
 }
-.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-primary:hover { 
+  background: var(--gold-light); 
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201,162,39,0.35);
+}
 
 .btn-secondary {
-  border: 1px solid rgba(201,162,39,0.5);
+  border: 1px solid rgba(201,162,39,0.4);
   color: var(--gold);
-  padding: 0.9rem 2rem;
-  border-radius: 4px;
+  padding: 1rem 2.2rem;
+  border-radius: 6px;
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
 }
-.btn-secondary:hover { background: rgba(201,162,39,0.08); border-color: var(--gold); }
+.btn-secondary:hover { 
+  background: rgba(201,162,39,0.08); 
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
 
 .hero-stats {
-  display: flex; gap: 2.5rem; margin-top: 3rem;
+  display: flex; gap: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 2rem;
 }
-.stat-item 
+.stat-item { display: block; }
 .stat-num {
   font-family: var(--font-display);
   font-size: 2.2rem;
@@ -185,78 +201,119 @@ nav {
   line-height: 1;
 }
 .stat-label {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--gray);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 0.2rem;
+  letter-spacing: 0.1em;
+  margin-top: 0.4rem;
+  font-weight: 600;
 }
 
-/* Hero visual */
+/* NOVA ESTRUTURA VISUAL: A casa agora fica linda e controlada dentro deste painel */
 .hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
+
 .hero-card {
-  background: var(--dark2);
-  border: 1px solid rgba(201,162,39,0.15);
-  border-radius: 12px;
+  width: 100%;
+  max-width: 440px;
+  height: 520px;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
+  border: 1px solid rgba(201,162,39,0.3);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+  background-image: url('casa.png');
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
 }
-.hero-card-top {
-  background: linear-gradient(135deg, #1A1400 0%, #0D0D0D 100%);
-  padding: 2.5rem;
-  display: flex; align-items: center; justify-content: center;
-}
-.mh-logo-big {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 5rem;
-  color: var(--white);
-  line-height: 1;
-  text-align: center;
-}
-.mh-logo-big .gold { color: var(--gold); }
-.mh-logo-icon {
-  text-align: center;
-  margin-bottom: 0.25rem;
-}
-.mh-logo-icon svg { width: 40px; height: 40px; }
-.mh-logo-sub {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.35em;
-  color: var(--gray);
-  text-align: center;
-  margin-top: 0.5rem;
+.hero-card:hover {
+  transform: translateY(-5px) scale(1.01);
 }
 
-.hero-card-body {
-  padding: 1.5rem 2rem;
-  border-top: 1px solid rgba(201,162,39,0.15);
+/* Máscara elegante interna no card da casa */
+.hero-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.4) 50%, transparent 100%);
+  z-index: 1;
 }
-.hero-card-tagline {
-  font-size: 0.82rem;
-  color: rgba(245,245,240,0.6);
-  text-align: center;
-  font-style: italic;
-  letter-spacing: 0.05em;
-}
-.hero-card-tagline strong { color: var(--gold); font-style: normal; }
 
 .hero-badge {
   position: absolute;
-  top: -12px; right: -12px;
+  top: 20px; right: 20px;
   background: var(--gold);
   color: var(--black);
   font-family: var(--font-display);
   font-weight: 900;
   font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.5rem 0.8rem;
-  border-radius: 50px;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Identidade da Empresa fixa na base do card da foto */
+.hero-card-body {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2rem 1.5rem;
+  z-index: 2;
+  text-align: center;
+}
+
+.mh-logo-icon {
+  margin-bottom: 0.5rem;
+}
+.mh-logo-icon svg { width: 36px; height: 36px; }
+
+.mh-logo-big {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.mh-logo-big .gold { color: var(--gold); }
+
+.mh-logo-sub {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-card-tagline {
+  font-size: 0.85rem;
+  color: rgba(245,245,240,0.7);
+  line-height: 1.5;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1rem;
+}
+.hero-card-tagline strong { color: var(--gold); }
+
+.hero-badge {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
 }
 
 /* ─── SECTION SHARED ───────────────────────────────── */
@@ -447,7 +504,9 @@ section {
 .atend-desc { color: var(--gray); font-size: 0.9rem; }
 
 /* ─── CONTATO ──────────────────────────────────────── */
-#contato 
+#contato {
+  position: relative;
+}
 
 .contact-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
